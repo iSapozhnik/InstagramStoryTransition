@@ -14,6 +14,12 @@
 		FF16858D1EB5EDCF00BA9A44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF16858B1EB5EDCF00BA9A44 /* LaunchScreen.storyboard */; };
 		FF1685961EB5F3CB00BA9A44 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1685941EB5F3CB00BA9A44 /* StoryCollectionViewCell.swift */; };
 		FF1685971EB5F3CB00BA9A44 /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1685951EB5F3CB00BA9A44 /* StoryCollectionViewCell.xib */; };
+		FF1685991EB5F92600BA9A44 /* InstagramStoryCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1685981EB5F92600BA9A44 /* InstagramStoryCollectionViewFlowLayout.swift */; };
+		FF16859B1EB5FE0C00BA9A44 /* InstagramStoryLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF16859A1EB5FE0C00BA9A44 /* InstagramStoryLayoutAttributes.swift */; };
+		FF16859D1EB60CA700BA9A44 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF16859C1EB60CA700BA9A44 /* Animator.swift */; };
+		FF16859F1EB6141500BA9A44 /* UIView+AnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF16859E1EB6141500BA9A44 /* UIView+AnchorPoint.swift */; };
+		FF1685A21EB61A7A00BA9A44 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1685A01EB61A7A00BA9A44 /* StoryViewController.swift */; };
+		FF1685A31EB61A7A00BA9A44 /* StoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1685A11EB61A7A00BA9A44 /* StoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		FF16858E1EB5EDCF00BA9A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1685941EB5F3CB00BA9A44 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF1685951EB5F3CB00BA9A44 /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		FF1685981EB5F92600BA9A44 /* InstagramStoryCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramStoryCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		FF16859A1EB5FE0C00BA9A44 /* InstagramStoryLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramStoryLayoutAttributes.swift; sourceTree = "<group>"; };
+		FF16859C1EB60CA700BA9A44 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		FF16859E1EB6141500BA9A44 /* UIView+AnchorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnchorPoint.swift"; sourceTree = "<group>"; };
+		FF1685A01EB61A7A00BA9A44 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryViewController.swift; path = ../StoryViewController.swift; sourceTree = "<group>"; };
+		FF1685A11EB61A7A00BA9A44 /* StoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoryViewController.xib; path = ../StoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +72,15 @@
 			children = (
 				FF1685821EB5EDCE00BA9A44 /* AppDelegate.swift */,
 				FF1685841EB5EDCE00BA9A44 /* ViewController.swift */,
+				FF1685A01EB61A7A00BA9A44 /* StoryViewController.swift */,
+				FF1685A11EB61A7A00BA9A44 /* StoryViewController.xib */,
+				FF16859A1EB5FE0C00BA9A44 /* InstagramStoryLayoutAttributes.swift */,
+				FF1685981EB5F92600BA9A44 /* InstagramStoryCollectionViewFlowLayout.swift */,
+				FF16859C1EB60CA700BA9A44 /* Animator.swift */,
 				FF1685861EB5EDCF00BA9A44 /* Main.storyboard */,
 				FF1685941EB5F3CB00BA9A44 /* StoryCollectionViewCell.swift */,
 				FF1685951EB5F3CB00BA9A44 /* StoryCollectionViewCell.xib */,
+				FF16859E1EB6141500BA9A44 /* UIView+AnchorPoint.swift */,
 				FF1685891EB5EDCF00BA9A44 /* Assets.xcassets */,
 				FF16858B1EB5EDCF00BA9A44 /* LaunchScreen.storyboard */,
 				FF16858E1EB5EDCF00BA9A44 /* Info.plist */,
@@ -130,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1685971EB5F3CB00BA9A44 /* StoryCollectionViewCell.xib in Resources */,
+				FF1685A31EB61A7A00BA9A44 /* StoryViewController.xib in Resources */,
 				FF16858D1EB5EDCF00BA9A44 /* LaunchScreen.storyboard in Resources */,
 				FF16858A1EB5EDCF00BA9A44 /* Assets.xcassets in Resources */,
 				FF1685881EB5EDCF00BA9A44 /* Main.storyboard in Resources */,
@@ -143,9 +162,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF16859F1EB6141500BA9A44 /* UIView+AnchorPoint.swift in Sources */,
+				FF16859D1EB60CA700BA9A44 /* Animator.swift in Sources */,
 				FF1685851EB5EDCE00BA9A44 /* ViewController.swift in Sources */,
 				FF1685961EB5F3CB00BA9A44 /* StoryCollectionViewCell.swift in Sources */,
+				FF1685A21EB61A7A00BA9A44 /* StoryViewController.swift in Sources */,
 				FF1685831EB5EDCE00BA9A44 /* AppDelegate.swift in Sources */,
+				FF16859B1EB5FE0C00BA9A44 /* InstagramStoryLayoutAttributes.swift in Sources */,
+				FF1685991EB5F92600BA9A44 /* InstagramStoryCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +333,7 @@
 				FF1685931EB5EDCF00BA9A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

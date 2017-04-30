@@ -22,35 +22,46 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return ("Story \($0)", color)
     }
     
+    let storyData: [(story: String, imageName: String)] = (0...3).map {
+        
+        return ("Story \($0)", "\($0).jpg")
+    }
+    
+    var controllers: [IndexPath:UIViewController] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.register(UINib.init(nibName: "StoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        
+        let layout = InstagramStoryCollectionViewFlowLayout()
+        collectionView.collectionViewLayout = layout
     }
     
     // UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return data.count
+        return storyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StoryCollectionViewCell
         
-        let dataElement = data[indexPath.row]
-        
-        cell.storyLabel.text = dataElement.story
-        cell.contentView.backgroundColor = dataElement.color
+//        let dataElement = data[indexPath.row]
+//        
+//        cell.storyLabel.text = dataElement.story
+//        cell.contentView.backgroundColor = dataElement.color
         
         return cell
     }
     
-    //
+    // UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return view.bounds.size
+        // Fullscreen cells
+        return collectionView.bounds.size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -58,11 +69,41 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 0.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 0.0
+    }
+    
+    //
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let story = storyData[indexPath.row]
+        
+        let cell = cell as! StoryCollectionViewCell
+        let controllerToDisplay = StoryViewController(story: story.story, storyImageName: story.imageName)
+        
+        self.addChildViewController(controllerToDisplay)
+        controllerToDisplay.view.frame = cell.contentView.bounds
+        
+        cell.contentView.addSubview(controllerToDisplay.view)
+        cell.contentView.bringSubview(toFront: cell.dimmView)
+        controllerToDisplay.didMove(toParentViewController: self)
+        
+        controllers[indexPath] = controllerToDisplay
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        guard let controllerToRemove = controllers[indexPath] else { return }
+        
+        controllerToRemove.willMove(toParentViewController: nil)
+        controllerToRemove.view.removeFromSuperview()
+        controllerToRemove.removeFromParentViewController()
+        
+        controllers[indexPath] = nil
     }
 }
 

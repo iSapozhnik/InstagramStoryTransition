@@ -8,8 +8,13 @@
 
 import UIKit
 
-class StoryCollectionViewCell: UICollectionViewCell {
+protocol Dimmable {
+    var dimmView: UIView! { get set }
+}
 
+class StoryCollectionViewCell: UICollectionViewCell, Dimmable {
+
+    @IBOutlet weak var dimmView: UIView!
     @IBOutlet weak var storyLabel: UILabel!
     
     override func awakeFromNib() {

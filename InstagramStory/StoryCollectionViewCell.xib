@@ -24,14 +24,23 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-za-9hM">
+                        <rect key="frame" x="0.0" y="0.0" width="298" height="341"/>
+                        <color key="backgroundColor" red="0.62517845812182737" green="0.62517845812182737" blue="0.62517845812182737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="pOP-38-Pph" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="0Sz-tN-Pb4"/>
+                <constraint firstAttribute="bottom" secondItem="W4v-za-9hM" secondAttribute="bottom" id="0yW-CY-Zqb"/>
                 <constraint firstItem="pOP-38-Pph" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="U60-8X-Jia"/>
+                <constraint firstItem="W4v-za-9hM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Y4d-FQ-DNW"/>
+                <constraint firstItem="W4v-za-9hM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZCk-ik-e5N"/>
+                <constraint firstAttribute="trailing" secondItem="W4v-za-9hM" secondAttribute="trailing" id="w9c-wQ-1ft"/>
             </constraints>
             <size key="customSize" width="298" height="341"/>
             <connections>
+                <outlet property="dimmView" destination="W4v-za-9hM" id="chw-nR-88f"/>
                 <outlet property="storyLabel" destination="pOP-38-Pph" id="eQu-Ge-TD1"/>
             </connections>
             <point key="canvasLocation" x="29" y="43.5"/>
